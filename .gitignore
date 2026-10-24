@@ -1,0 +1,18 @@
+# Byte-compiled / venv
+__pycache__/
+*.pyc
+.venv/
+
+# Spark / Delta runtime artifacts
+warehouse/
+metastore_db/
+derby.log
+spark-warehouse/
+
+# Pipeline outputs (regenerable)
+data/output/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

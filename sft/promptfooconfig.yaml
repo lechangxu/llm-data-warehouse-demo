@@ -1,0 +1,27 @@
+# promptfoo eval config — LOCAL ONLY (needs an LLM provider key; CI does not run this).
+# Scores a model's sentiment answers against the weak references in data/output/sft.jsonl.
+# Usage:  python -m dw.pipeline && npx promptfoo@latest eval -c sft/promptfooconfig.yaml
+description: Sentiment task eval against warehouse-derived references
+prompts:
+  - "{{instruction}}\n\n{{input}}\n\nAnswer:"
+providers:
+  - openai:gpt-4o-mini  # any provider promptfoo supports; override with --provider
+tests:
+  - vars:
+      instruction: Classify the sentiment of this headline as POSITIVE, NEGATIVE, or NEUTRAL.
+      input: NVDA datacenter bookings extend into 2027
+    assert:
+      - type: icontains
+        value: POSITIVE
+  - vars:
+      instruction: Classify the sentiment of this headline as POSITIVE, NEGATIVE, or NEUTRAL.
+      input: TSLA recalls 40k vehicles over sensor fault
+    assert:
+      - type: icontains
+        value: NEGATIVE
+  - vars:
+      instruction: Classify the sentiment of this headline as POSITIVE, NEGATIVE, or NEUTRAL.
+      input: MSFT quantum team publishes error-correction result
+    assert:
+      - type: icontains-any
+        value: [NEUTRAL, POSITIVE]
