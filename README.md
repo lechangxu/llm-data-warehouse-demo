@@ -86,7 +86,7 @@ data/sample/news_seed.csv          (synthetic financial news, 42 rows incl. 4 kn
 
 ## Honest Scope
 
-This is a **local-scale methodology demo**: 42 seed rows, single machine. It demonstrates layering discipline, reconciliation gating, and metric governance — not TB-scale operations. Production claims for that live in my work history (3 years BI/data warehousing), not in this repo.
+This is a **local-scale methodology demo**: 42 seed rows, single machine. It demonstrates layering discipline, reconciliation gating, and metric governance — not TB-scale operations. Production claims live in my work history: 3 years BI/data warehousing, including a national-scale shared-database DW program where I owned the metric system across 4 subject domains, 70 analysis dimensions and 368 governed reports — the same 口径-per-metric discipline that `metrics/dictionary.md` encodes here.
 
 ## License
 
