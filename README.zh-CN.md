@@ -25,7 +25,7 @@ uv pip install --python .venv/bin/python -r requirements.txt
 ```text
 [layer] ods_news: 42 rows
 [layer] dwd_news: 38 rows
-[layer] dws_ticker_daily: 40 rows
+[layer] dws_ticker_daily: 34 rows
 [layer] ads_daily_metrics: 5 rows
 [quality] all gates passed
 [sft] sft.jsonl: 114 examples
